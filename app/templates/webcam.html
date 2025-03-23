@@ -43,13 +43,21 @@
     <video id="video" autoplay></video>
     <canvas id="canvas"></canvas>
     
-    <div>
+<!--     <div>
         <label for="content-type">Select Content Type:</label>
         <select id="content-type">
             <option value="song">Song</option>
             <option value="audiobook">Audiobook</option>
         </select>
-    </div>
+    </div> -->
+    <div style="margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    <label for="content-type" style="font-size: 18px; font-weight: bold; margin-right: 10px;">Select Content Type:</label>
+    <select id="content-type" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+        <option value="song">Song</option>
+        <option value="audiobook">Audiobook</option>
+    </select>
+</div>
+
     
     <div>
         <button id="capture-btn">Capture</button>
