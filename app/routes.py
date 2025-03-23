@@ -200,24 +200,78 @@ os.environ['TF_ENABLE_ONEDNN_QPTS'] = '0'
 emotion_recommendations = {
     "Angry": {
         "songs": [
-            "https://open.spotify.com/track/xyz_song",  
-            "https://open.spotify.com/track/abc_song"
+            "https://open.spotify.com/track/4UtAMg91FQ5AwF4lZMStQy?si=fa238c52e0e84b1d",  
+            "https://open.spotify.com/track/5AsHQzHhLJFIvE8l2OdOoG?si=ad3863e6fe3242d5"
         ],
         "books": [
-            "https://open.spotify.com/episode/xyz_book",  
-            "https://open.spotify.com/episode/abc_book"
+            "https://open.spotify.com/episode/5CBvXPfKNHVbLF4EG1XufX?si=143428f7f3334e0c",  
+            "https://open.spotify.com/episode/7aKCmGHBDFmffbL1NjNUfo?si=9f88257b50d041f1"
         ]
     },
     "Happy": {
         "songs": [
-            "https://open.spotify.com/track/happy_song1",  
-            "https://open.spotify.com/track/happy_song2"
+            "https://open.spotify.com/track/4gxTJiCBfQUpqtWeSQCZcK?si=b335a6e500aa4dac",  
+            "https://open.spotify.com/track/5fwRhPXAvGgzUxW62ZCvEg?si=03b915292ef74146"
         ],
         "books": [
-            "https://open.spotify.com/episode/happy_book1",  
-            "https://open.spotify.com/episode/happy_book2"
+            "https://open.spotify.com/track/0fJH2SsaZ2N619cdkkhN1o?si=e53bb561e45649c6",  
+            "https://open.spotify.com/episode/3pgS23c6tPOuBSqHOMWjQO?si=92547b9ee0b74f69",
+            "https://open.spotify.com/episode/6VMgvrmzQRetQvcfwVYaCC?si=c582945e0db44007"
         ]
     },
+    "Neutral": {
+        "songs": [
+            "https://open.spotify.com/track/4NmWv6PEGEAmorN5UN9fRo?si=b0ccfe9ce3f1469c",  
+            "https://open.spotify.com/track/2k0m3S5y6J3RPBEwrYAHrU?si=d962b2b9438f41cf"
+        ],
+        "books": [
+            "https://open.spotify.com/episode/2xT7glH4046UZoWJPK0DAf?si=06967041b5944433",  
+            "https://open.spotify.com/episode/3pgS23c6tPOuBSqHOMWjQO?si=92547b9ee0b74f69",
+            "https://open.spotify.com/episode/5dqj3jPNqToxvlsKWbUa9V?si=bc8662d6a19b4818"
+        ]
+    },
+    "Sad": {
+        "songs": [
+            "https://open.spotify.com/track/4NmWv6PEGEAmorN5UN9fRo?si=b0ccfe9ce3f1469c",  
+            "https://open.spotify.com/track/2k0m3S5y6J3RPBEwrYAHrU?si=d962b2b9438f41cf",
+            "https://open.spotify.com/track/6tulU5hdoXmkeM0e8JOGz3?si=dfcaf51a611f4755"
+        ],
+        "books": [
+            "https://open.spotify.com/episode/4Rnv8yGQ5cnl4yXO7hvFW4?si=b39b55b01182422e",  
+            "https://open.spotify.com/episode/6I3ITgkVYUZRBrKK2GGrCO?si=2e817968ef2e45ce",
+        ]
+    },
+    "Fearful": {
+        "songs": [
+            "https://open.spotify.com/track/66aRgKCtqQFWLSGeFKgWQt?si=e5f28bae64724efd",  
+            "https://open.spotify.com/track/2rWYfMbQgHYXPEzbhN65Ys?si=5a1ab818f8c24bb6",
+        ],
+        "books": [
+            "https://open.spotify.com/episode/0TdPnBwvb2DHu7wCq3RhHo?si=f9b7a61aac2c4525",  
+            "https://open.spotify.com/episode/7nkQ93hrJGLiRQt4bJgvq1?si=ef02198288a34d3c",
+        ]
+    },
+     "Surprised": {
+        "songs": [
+            "https://open.spotify.com/track/4blqlsA1uf2d2I40E90EUC?si=49f2daee276c4e84",  
+            "https://open.spotify.com/track/04ChFQZCKl2yRcvc0VR7qN?si=59b1f29bf95c4403",
+        ],
+        "books": [
+            "https://open.spotify.com/episode/0Sk836twiPIIMg8wugePCO?si=317ef3be96004b58",  
+            "https://open.spotify.com/episode/4LIFfyKjeBqgUvMxYdGKmp?si=6a98fa7751f34170",
+        ]
+    },
+     "Disgusted": {
+        "songs": [
+            "https://open.spotify.com/track/73virUhdH3B8pi53zaG2BL?si=bdea2584d8a14d28",  
+            "https://open.spotify.com/track/2hs0eVQRkBiGw8nLPN2rIu?si=26cb51eabfd9459a",
+        ],
+        "books": [
+            "https://open.spotify.com/episode/50Ci7SHw7UlQGQhQd8zVgE?si=0bfed9d2120d4a06",  
+            "https://open.spotify.com/episode/6gVvoMxepbTvjA4ZNJLNrz?si=f0b4d34473394a29",
+        ]
+    },
+    
     # Add other emotions with respective songs and books
 }
 
