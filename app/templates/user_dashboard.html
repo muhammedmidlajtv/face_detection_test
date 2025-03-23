@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f9f9f9; /* Optional: Add a subtle background */
+      }
+
+      .flex {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      h1 {
+        font-size: 40px;
+        color: brown;
+        margin: 0;
+      }
+
+      a {
+        font-size: 25px;
+        color: brown;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+
+      .small-text {
+        font-size: 13px;
+        color: #333;
+      }
+
+      strong {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <h1>We suggest books based on your mood</h1>
+      <a href="{{ url_for('blob') }}">Try it</a>
+    </div>
+
+    <div class="flex">
+      <a class="small-text"> press 'q' to <strong>lock</strong> emotion </a>
+    </div>
+  </body>
+</html>

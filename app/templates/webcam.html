@@ -1,0 +1,112 @@
+<!-- templates/webcam.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        #video {
+            width: 640px;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        #capture-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emotion Detection</h1>
+    <p>Allow camera access and click "Capture" to detect your emotion</p>
+    
+    <video id="video" autoplay></video>
+    <canvas id="canvas"></canvas>
+    
+    <div>
+        <label for="content-type">Select Content Type:</label>
+        <select id="content-type">
+            <option value="song">Song</option>
+            <option value="audiobook">Audiobook</option>
+        </select>
+    </div>
+    
+    <div>
+        <button id="capture-btn">Capture</button>
+    </div>
+    
+    <div id="result"></div>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureBtn = document.getElementById('capture-btn');
+        const result = document.getElementById('result');
+        const contentTypeSelect = document.getElementById('content-type');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+            })
+            .catch(function(err) {
+                console.error("Error accessing the camera: ", err);
+                result.innerHTML = "Error accessing the camera. Please allow camera access.";
+            });
+
+        captureBtn.addEventListener('click', function() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            canvas.toBlob(function(blob) {
+                const formData = new FormData();
+                formData.append('image', blob, 'webcam.jpg');
+                formData.append('content_type', contentTypeSelect.value);
+
+                result.innerHTML = "Processing...";
+                
+                fetch('/analyze_emotion', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    result.innerHTML = `
+                        <h2>Detected Emotion: ${data.emotion}</h2>
+                        <p>Recommended ${contentTypeSelect.value}:</p>
+                        <a href="${data.recommendation}" target="_blank">
+                            <button style="padding: 10px 20px; background-color: #008CBA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+                                Listen to Recommended Content
+                            </button>
+                        </a>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.innerHTML = "Error processing the image. Please try again.";
+                });
+            }, 'image/jpeg', 0.95);
+        });
+    </script>
+</body>
+</html>
